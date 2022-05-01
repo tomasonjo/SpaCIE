@@ -91,13 +91,11 @@ class ExtendComponent:
         self.mentions_inventory = load_mentions_inventory()
 
     def get_candidates(self, text):
-        print(text)
         if self.mentions_inventory.get(text):
             return self.mentions_inventory[text]
         else:
             candidates = call_wiki_api(text)
             self.mentions_inventory[text] = candidates
-            print(f"candidates: {candidates}")
             return candidates
 
     def _samples_from_doc(self, doc: Doc) -> List[QASample]:
