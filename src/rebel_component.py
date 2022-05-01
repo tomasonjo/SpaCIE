@@ -103,6 +103,8 @@ class RebelComponent:
             # If regex doesn't match, then skip the relationship
             if not head_span or not tail_span:
                 continue
+            print('ssssssssssssssssssss')
+            print(triplet)
             # get spacy span
             head_span = doc.char_span(
                 head_span.start(), head_span.end())
@@ -111,6 +113,8 @@ class RebelComponent:
             # Sometimes the match doesn't work, not sure why
             if not head_span or not tail_span:
                 continue
+            print('++++++++++++++++++')
+            print(triplet)
             # Remove self-loops (relationships that start and end at the entity)
             if head_span == tail_span:
                 continue
