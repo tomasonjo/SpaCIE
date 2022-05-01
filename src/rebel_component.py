@@ -120,8 +120,6 @@ class RebelComponent:
                 doc._.rel[index] = {"relation": triplet["type"],
                                     "head_span": head_span, "tail_span": tail_span}
             # Add entity
-            print(head_span)
-            print(ents)
             if not any([e.text == head_span.text for e in ents]):
                 ents.append(head_span)
             if not any([e.text == tail_span.text for e in ents]):
