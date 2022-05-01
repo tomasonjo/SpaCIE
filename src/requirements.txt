@@ -1,5 +1,5 @@
 git+https://github.com/sapienzanlp/extend@main
 spacy
 spacy-transformers
-classy-core=0.2.1
+classy-core==0.2.1
 crosslingual-coreference
