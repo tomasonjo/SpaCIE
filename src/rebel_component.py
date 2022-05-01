@@ -112,7 +112,7 @@ class RebelComponent:
             # Remove self-loops (relationships that start and end at the entity)
             if head_span == tail_span:
                 continue
-
+            console.log(triplet)
             index = hashlib.sha1("".join(
                 [head_span.text, tail_span.text, triplet['type']]).encode('utf-8')).hexdigest()
             # Add relationship
