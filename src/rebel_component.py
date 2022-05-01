@@ -98,6 +98,8 @@ class RebelComponent:
                 " ".join([f"\\b{el}\\b" for el in triplet['head'].split(" ")]), doc.text)
             tail_span = re.search(
                 " ".join([f"\\b{el}\\b" for el in triplet['tail'].split(" ")]), doc.text)
+            print('-----------')
+            print(triplet)
             # If regex doesn't match, then skip the relationship
             if not head_span or not tail_span:
                 continue
@@ -112,7 +114,7 @@ class RebelComponent:
             # Remove self-loops (relationships that start and end at the entity)
             if head_span == tail_span:
                 continue
-            console.log(triplet)
+            print(triplet)
             index = hashlib.sha1("".join(
                 [head_span.text, tail_span.text, triplet['type']]).encode('utf-8')).hexdigest()
             # Add relationship
